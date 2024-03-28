@@ -150,7 +150,7 @@ function MentionsMenu({onSelect, value = ''}: {onSelect: SelectItemHandler; valu
   return (
     <div onKeyDown={handleKeyDown}>
       <TextInput
-        placeholder={t('form.input.assignee.search.placeholder')}
+        placeholder={t('form.subscribers.menu.input.placeholder')}
         autoFocus
         border={false}
         onChange={handleSearchChange}
@@ -162,7 +162,7 @@ function MentionsMenu({onSelect, value = ''}: {onSelect: SelectItemHandler; valu
         autoComplete="off"
       />
 
-      <div style={{maxHeight: '320px', overflowY: 'scroll', paddingTop: '8px'}}>
+      <div style={{maxHeight: '320px', overflowY: 'scroll', paddingTop: '8px', width: '100%'}}>
         {filteredOptions.length === 0 ? (
           <Box padding={3}>
             <Text align="center" size={1} muted>
