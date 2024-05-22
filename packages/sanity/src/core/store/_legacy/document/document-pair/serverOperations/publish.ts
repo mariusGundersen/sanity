@@ -19,10 +19,13 @@ export const publish: OperationImpl<[], DisabledReason> = {
       throw new Error('cannot execute "publish" when draft is missing')
     }
 
+    // TODO: Should be dynamic
+    const draftIndex = 0
+
     return client.observable.action(
       {
         actionType: 'sanity.action.document.publish',
-        draftId: idPair.draftId,
+        draftId: idPair.draftIds[draftIndex],
         publishedId: idPair.publishedId,
         // The editor must be able to see the latest state of both the draft document they are
         // publishing, and the published document they are choosing to replace. Optimistic
