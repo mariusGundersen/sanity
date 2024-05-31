@@ -200,7 +200,7 @@ importers:
         specifier: ^6.3.1
         version: 6.3.1
       prettier:
-        specifier: ^3.2.5
+        specifier: ^3.3.0
         version: 3.3.0
       rimraf:
         specifier: ^3.0.2
@@ -800,7 +800,7 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0
       prettier:
-        specifier: ^3.2.5
+        specifier: ^3.3.0
         version: 3.3.0
       semver:
         specifier: ^7.3.5
