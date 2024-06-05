@@ -6,7 +6,22 @@ import {
   type IntrinsicTypeName,
   type TypeAliasDefinition,
 } from '../schemaDefinition'
-import {type BaseSchemaDefinition, type SearchConfiguration, type TitledListValue} from './common'
+import {
+  type BaseSchemaDefinition,
+  type FieldGroupDefinition,
+  type SearchConfiguration,
+  type TitledListValue,
+} from './common'
+
+export interface InsertMenuOptions {
+  /** @defaultValue `false` */
+  filter?: boolean
+  groups?: Array<Pick<FieldGroupDefinition, 'name' | 'title'> & {of?: Array<string>}>
+  /** defaultValue `true` */
+  icons?: boolean
+  /** @defaultValue `['list']` */
+  views?: Array<'list' | 'grid'>
+}
 
 /** @public */
 export interface ArrayOptions<V = unknown> extends SearchConfiguration {
@@ -18,6 +33,7 @@ export interface ArrayOptions<V = unknown> extends SearchConfiguration {
   direction?: 'horizontal' | 'vertical'
   sortable?: boolean
   modal?: {type?: 'dialog' | 'popover'; width?: number | 'auto'}
+  insertMenu?: InsertMenuOptions
 }
 
 /** @public */
